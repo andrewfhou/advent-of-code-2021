@@ -9,14 +9,13 @@ print('+-------------------------+')
 START_READ = CURR_MS()
 print('\nREADING FILE... ',end='')
 with open("input.txt") as file:
-    inputs = file.read().split('\n')
+    inputs = file.read().splitlines()
 print('%.6fms\n' % (CURR_MS() - START_READ))
 
 def part_one():
     hor = 0
     dep = 0
     for line in inputs:
-        if line == '': break
         mov, val = line.split()
         val = int(val)
         if mov == 'forward':
@@ -32,7 +31,6 @@ def part_two():
     dep = 0
     aim = 0
     for line in inputs:
-        if line == '': break
         mov, val = line.split()
         val = int(val)
         if mov == 'forward':
